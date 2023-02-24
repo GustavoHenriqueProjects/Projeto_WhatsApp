@@ -1,0 +1,80 @@
+.conteudo_main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+}
+
+.conteudo_pesquisa_lista{
+    display: flex;
+    flex-direction: column;
+}
+
+.conteudo_listaDinamica{
+    height: 700px;
+    overflow: auto;
+}
+
+.conteudo_pesquisa{
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-bottom: 23px;
+    gap: 10px;
+}
+
+#pesquisa{
+    background-color: antiquewhite;
+    border: solid 1px;
+    border-radius: 10px;
+    width: 300px;
+}
+#txtPesquisa{
+    background-color: transparent;
+    font-size: 23px;
+    font-style: italic;
+    width: 300px;
+    height: 30px;
+    border: none;
+
+}
+
+.conteudo-lista{
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minMax(1fr)); /*autofit preenche os espaços das colunas*/
+    gap: 23px;
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-bottom: 15px;
+    
+}
+
+.lista{
+    display: flex;
+    border: solid 1px ;
+    width: 90%;
+    gap: 20px;
+    background: rgba(217, 217, 217, 1);
+    align-items: center;
+}
+
+#img_usuario{
+    height: 80px;
+    padding: 5px;
+}
+
+.title_text{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#lista_title{
+    font-size: 1.2rem;
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+}
+
+#text{
+    font-size: 1rem;
+}
