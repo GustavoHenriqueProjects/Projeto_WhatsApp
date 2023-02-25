@@ -80,3 +80,107 @@
 .texto_Profissao{
     font-size: 1rem;
 }
+
+@media (max-width: 1320px){
+    .conteudo_listaDinamica{
+        height: 620px;
+        overflow: auto;
+    
+    }
+      
+}
+
+@media (max-width: 700px){
+
+    #pesquisa{
+        width: 200px;
+    }
+
+    #txtPesquisa{
+        font-size: 20px;
+        font-style: italic;
+        width: 200px;
+    
+    }
+      
+    .conteudo_pesquisa{
+        display: flex;
+        align-items: center;
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-bottom: 23px;
+        gap: 10px;
+    }
+
+    .conteudo-lista{
+        padding-top: 10px;
+        padding-left: 20px;
+        
+    }
+
+    .lista{
+        width: 90%;
+        gap: 13px;
+    }
+    
+    .img_usuario{
+        height: 60px;
+        width: 60px;
+    }
+
+    .titulo_texto{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .conteudo_listaDinamica{
+        height: 450px;
+        overflow: auto;
+    
+    }
+
+    #container_principal{
+        display:flex;
+        flex-direction: column;
+        height: 100%;
+        /* height: 1000px; */
+        width: 100%;
+        border: 1px solid black;
+    }
+   
+}
+
+@media (max-width: 420px){
+    .conteudo_main{
+        display: grid;
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    #container_principal{
+        display:flex;
+        flex-direction: column;
+        height: auto;
+        /* height: 1000px; */
+        width: 100%;
+        border: 1px solid black;
+    }
+
+    #pesquisa{
+        background-color: antiquewhite;
+        border: solid 1px;
+        border-radius: 10px;
+        width: 90%;
+    }
+
+    #txtPesquisa{
+        background-color: transparent;
+        font-size: 23px;
+        font-style: italic;
+        width: 90%;
+        height: 30px;
+        border: none;
+    
+    }
+}
