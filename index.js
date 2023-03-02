@@ -10,12 +10,17 @@
 
 import {contatos} from "./contatos.js"
 
+console.log(contatos[0].messages[3])
+
+var cont = 0
 
 const criarNovaLista = (contatos) =>{
     //Criando uma div
-    const div = document.createElement('div')
+    var div = document.createElement('div')
     //Criando uma classe para a div
     div.classList.add('lista')
+    div.id = cont++
+    //div.id = 'lista'
 
     //Criando uma imagem
     const img = document.createElement('img')
@@ -42,8 +47,14 @@ const criarNovaLista = (contatos) =>{
     titulo_texto.append(titulo,profisao)
     div.append(img,titulo_texto)
 
-    return div
+    div.addEventListener('click',function(){
+        let id = document.getElementById(div.id)
+        
+        idUsuarioSelecionado(id)
 
+    })
+
+    return div
 }
 
 const carregarWhatsApp = () => {
@@ -57,3 +68,12 @@ const carregarWhatsApp = () => {
 }
 
 carregarWhatsApp()
+
+const idUsuarioSelecionado = ($divID) =>{  
+    let divID = Number($divID.id)
+
+    //Tranforma somente o ID da div em numero o resto é descartado
+    let id = divID
+
+    console.log(id)
+}
