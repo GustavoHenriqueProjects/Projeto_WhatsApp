@@ -8,15 +8,15 @@
 //Ajuda a policiar o código, o uso das váriaveis.
 'use strict'
 
-import {contatos} from "./contatos.js"
+import { contatos } from "./contatos.js"
 
 console.log(contatos[0].messages[3])
 
 var cont = 0
 
-const criarNovaLista = (contatos) =>{
+const criarNovaLista = (contato) => {
     //Criando uma div
-    var div = document.createElement('div')
+    const div = document.createElement('div')
     //Criando uma classe para a div
     div.classList.add('lista')
     div.id = cont++
@@ -27,7 +27,7 @@ const criarNovaLista = (contatos) =>{
     //Adicionando uma classe para a imagem
     img.classList.add('img_usuario')
     //Pagando as sequencia das imagens no JSON
-    img.src = `./imagens_aplicativo/${contatos.image}`
+    img.src = `./imagens_aplicativo/${contato.image}`
 
     //Criando uma div chamada titulo_texto 
     const titulo_texto = document.createElement('div')
@@ -36,21 +36,27 @@ const criarNovaLista = (contatos) =>{
     //Criando elemento titulo para receber o nome
     const titulo = document.createElement('h5')
     titulo.classList.add('lista_titulo')
-    titulo.textContent = contatos.name
+    titulo.textContent = contato.name
 
     //Criando o elemento profissão
     const profisao = document.createElement('p')
     profisao.classList.add('texto_profissao')
-    profisao.textContent = contatos.description
+    profisao.textContent = contato.description
 
     //Adionando o titulo e o texto a div
-    titulo_texto.append(titulo,profisao)
-    div.append(img,titulo_texto)
+    titulo_texto.append(titulo, profisao)
+    div.append(img, titulo_texto)
 
-    div.addEventListener('click',function(){
+    /*****************************************************************
+     * Toda vez que a lista for clicada o id dela é
+     * selecionado e passado para a função idUsuarioSelecionado()
+     * que a conver para número e a passa para a função
+     * carregarMensagem().
+     ****************************************************************/
+    div.addEventListener('click', function () {
         let id = document.getElementById(div.id)
-        
-        idUsuarioSelecionado(id)
+        let numberId = Number(id.id)
+        carregarMensagem(numberId)
 
     })
 
@@ -69,11 +75,72 @@ const carregarWhatsApp = () => {
 
 carregarWhatsApp()
 
-const idUsuarioSelecionado = ($divID) =>{  
-    let divID = Number($divID.id)
+// const mensagen = (mensagem) => {
 
-    //Tranforma somente o ID da div em numero o resto é descartado
-    let id = divID
+//     const div = document.createElement('div')
 
-    console.log(id)
-}
+//     mensagem.messages.forEach((sender) => {
+
+//         const remetente_mensagem_tempo = document.createElement('div')
+//         div.classList.add('remetente_mensagem_tempo')
+
+//         const remetente = document.createElement('div')
+//         div.classList.add('remetente')
+
+//         const remetente_usuario = document.createElement('h1')
+//         remetente_usuario.textContent = sender.sender
+
+//         remetente.append(remetente_usuario)
+//         remetente_mensagem_tempo.append(remetente)
+//         div.append(remetente_mensagem_tempo)
+
+
+//     });
+
+//     return div
+// }
+
+const mensagen = (mensagem) => {
+
+    const container = document.createElement('div');
+    container.classList.add('mensagem');
+  
+    mensagem.messages.forEach((listaMensagem) => {
+  
+      const remetente_mensagem_tempo = document.createElement('div');
+      remetente_mensagem_tempo.classList.add('remetente_mensagem_tempo');
+  
+      const remetente = document.createElement('div');
+      remetente.classList.add('remetente');
+  
+      const remetente_usuario = document.createElement('h1');
+      remetente_usuario.id = 'remetente_usuario'
+      remetente_usuario.textContent = listaMensagem.sender;
+  
+      const mensagem_conteudo = document.createElement('p');
+      mensagem_conteudo.id ='mensagem_texto'
+      mensagem_conteudo.textContent = listaMensagem.content;
+
+      const tempo_resposta = document.createElement('p');
+      tempo_resposta.id ='tempo_resposta'
+      /** Se o listaMensagem.timestamp for verdadeiro ele pega o listaMensagem.timestamp se não pega o time*/
+      tempo_resposta.textContent = listaMensagem.timestamp ? listaMensagem.timestamp : listaMensagem.time
+
+      remetente.append(remetente_usuario);
+      remetente_mensagem_tempo.append(remetente, mensagem_conteudo,tempo_resposta);
+      container.append(remetente_mensagem_tempo);
+  
+    });
+  
+    return container;
+  
+  };
+
+const carregarMensagem = ($id) => {
+    const conteudoLista = document.getElementById('container');
+    const criarLista = contatos
+      .filter((contato, index) => index === $id) // filtra pelo índice igual a $id
+      .map((contato) => mensagen(contato)); // cria a lista de mensagens usando mensagen()
+    conteudoLista.replaceChildren(...criarLista);
+  };
+  

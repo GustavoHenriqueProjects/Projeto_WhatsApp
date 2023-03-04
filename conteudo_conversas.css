@@ -36,6 +36,12 @@
 
 }
 
+.mensagem{
+
+    height: 700px;
+    overflow: auto;
+}
+
 #container {
     height: 700px;
     overflow: auto;
@@ -82,7 +88,7 @@
 }
 
 #tempo_resposta{
-    font-size: 15px;
+    font-size: 13px;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -130,11 +136,22 @@
     overflow: auto;
     
     }
+
+    .mensagem{
+        height: 650px;
+    overflow: auto;
+    }
       
 }
 
 @media (max-width: 700px){
     #container {
+        height: 570px;
+        overflow: auto;
+    
+    }
+
+    .mensagem {
         height: 570px;
         overflow: auto;
     
