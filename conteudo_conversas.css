@@ -148,29 +148,21 @@
     #container{
     height: 650px;
     overflow: auto;
-    
     }
-
     .mensagem{
         height: 650px;
     overflow: auto;
-    }
-      
+    }    
 }
-
 @media (max-width: 700px){
     #container {
         height: 570px;
         overflow: auto;
-    
     }
-
     .mensagem {
         height: 570px;
         overflow: auto;
-    
     }
-
     .conteudo_conversas {
         display: grid;
         grid-template-areas:
@@ -178,7 +170,6 @@
             'main';
         grid-template-rows: 40px 1fr;
     }
-
     .remetente_mensagem_tempo{
         height: auto;
         width: 90%;
@@ -187,7 +178,23 @@
 }
 
 @media (max-width: 450px){
+    .conteudo_pesquisa_lista_None{
+        display: none;
+    }
+    .conteudo_pesquisa_lista_Aparecer{
+        display: flex;
+    }
+
+
     .conteudo_conversas{
            display: none;
+           flex-direction: column;
+    }
+    #container{
+        height: 450px;
+    }
+
+    .aparecerConversa{
+        display: flex;
     }
 }

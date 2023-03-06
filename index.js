@@ -57,7 +57,6 @@ const criarNovaLista = (contato) => {
         let id = document.getElementById(div.id)
         let numberId = Number(id.id)
         carregarMensagem(numberId)
-
     })
 
     return div
@@ -79,7 +78,15 @@ const mensagen = (mensagem) => {
 
     const container = document.createElement('div');
     container.classList.add('mensagem');
-  
+
+    //Reponsividade
+    const listaUsuarios = document.getElementById('conteudo_pesquisa_lista')
+    listaUsuarios.classList.add('conteudo_pesquisa_lista_None')
+
+    //Muda a classe do conteudo_Conversa para a Classe aparecer
+    const conteudoConversas = document.getElementById('conteudo_conversas')
+    conteudoConversas.classList.add('aparecerConversa')
+    
     mensagem.messages.forEach((listaMensagem) => {
   
       const remetente_mensagem_tempo = document.createElement('div');
