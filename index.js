@@ -75,31 +75,6 @@ const carregarWhatsApp = () => {
 
 carregarWhatsApp()
 
-// const mensagen = (mensagem) => {
-
-//     const div = document.createElement('div')
-
-//     mensagem.messages.forEach((sender) => {
-
-//         const remetente_mensagem_tempo = document.createElement('div')
-//         div.classList.add('remetente_mensagem_tempo')
-
-//         const remetente = document.createElement('div')
-//         div.classList.add('remetente')
-
-//         const remetente_usuario = document.createElement('h1')
-//         remetente_usuario.textContent = sender.sender
-
-//         remetente.append(remetente_usuario)
-//         remetente_mensagem_tempo.append(remetente)
-//         div.append(remetente_mensagem_tempo)
-
-
-//     });
-
-//     return div
-// }
-
 const mensagen = (mensagem) => {
 
     const container = document.createElement('div');
@@ -126,6 +101,10 @@ const mensagen = (mensagem) => {
       /** Se o listaMensagem.timestamp for verdadeiro ele pega o listaMensagem.timestamp se não pega o time*/
       tempo_resposta.textContent = listaMensagem.timestamp ? listaMensagem.timestamp : listaMensagem.time
 
+      if (listaMensagem.sender === "me") {
+        remetente_mensagem_tempo.id = 'usuarioPrincipalVerde';
+      }
+      
       remetente.append(remetente_usuario);
       remetente_mensagem_tempo.append(remetente, mensagem_conteudo,tempo_resposta);
       container.append(remetente_mensagem_tempo);
