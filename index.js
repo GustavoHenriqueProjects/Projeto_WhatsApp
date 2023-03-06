@@ -78,14 +78,23 @@ const mensagen = (mensagem) => {
 
     const container = document.createElement('div');
     container.classList.add('mensagem');
+    const volta_home = document.getElementById('volta_home')
 
     //Reponsividade
     const listaUsuarios = document.getElementById('conteudo_pesquisa_lista')
     listaUsuarios.classList.add('conteudo_pesquisa_lista_None')
-
     //Muda a classe do conteudo_Conversa para a Classe aparecer
     const conteudoConversas = document.getElementById('conteudo_conversas')
     conteudoConversas.classList.add('aparecerConversa')
+    
+    volta_home.addEventListener('click', function () {
+      listaUsuarios.classList.add('conteudo_pesquisa_lista')
+      listaUsuarios.classList.remove('conteudo_pesquisa_lista_None')
+
+      conteudoConversas.classList.add('conteudo_conversas')
+      conteudoConversas.classList.remove('aparecerConversa')
+  })
+
     
     mensagem.messages.forEach((listaMensagem) => {
   
