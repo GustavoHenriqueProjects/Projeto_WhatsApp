@@ -138,7 +138,6 @@ const carregarMensagem = ($id) => {
       .map((contato) => mensagen(contato)); // cria a lista de mensagens usando mensagen()
     conteudoLista.replaceChildren(...criarLista);
 
-    const envia_mensagemFlex = document.getElementById('envia_mensagemNone')
-    envia_mensagemFlex.id = 'envia_mensagemFlex'
+    const envia_mensagemFlex = document.getElementById('envia_mensagemNone').classList.add('envia_mensagemFlex')
   };
   

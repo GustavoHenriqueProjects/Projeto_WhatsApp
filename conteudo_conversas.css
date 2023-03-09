@@ -69,12 +69,13 @@
     display: flex;
     flex-direction: column;
     margin-top: 40px;
-    margin-left: 50px;
+    margin-left: 35%;
     padding-left: 10px;
     height: auto;
     width: 60%;
     background: linear-gradient(180deg, #02b671 0%, rgba(1, 191, 102, 0.637) 31.25%, rgba(1, 191, 102, 0.658), rgba(1, 191, 128, 0.595) 54.69%, rgba(1, 191, 112, 0.603) 67.19%, rgba(1, 191, 134, 0.564) 74.48%, rgba(1, 191, 112, 0.523) 88.02%, rgba(142, 1, 191, 0) 100%);
-    border-top-right-radius: 15px;
+    border-top-right-radius: 1px;
+    border-top-left-radius: 15px;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
 }
@@ -112,7 +113,7 @@
     display: none;
 }
 
-#envia_mensagemFlex {
+.envia_mensagemFlex {
     margin-left: 10px;
     display: flex;
     align-items: center;
