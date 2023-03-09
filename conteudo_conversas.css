@@ -108,7 +108,11 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-#nova_mensagem {
+#envia_mensagemNone{
+    display: none;
+}
+
+#envia_mensagemFlex {
     margin-left: 10px;
     display: flex;
     align-items: center;
@@ -142,6 +146,8 @@
     flex-direction: column;
     background-image: url(../imagens_aplicativo/background_Paper.jpg);
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     /*Tamanho da imagem é de acordo com o container*/
     height: 100%;
 }

@@ -137,5 +137,8 @@ const carregarMensagem = ($id) => {
       .filter((contato, index) => index === $id) // filtra pelo índice igual a $id
       .map((contato) => mensagen(contato)); // cria a lista de mensagens usando mensagen()
     conteudoLista.replaceChildren(...criarLista);
+
+    const envia_mensagemFlex = document.getElementById('envia_mensagemNone')
+    envia_mensagemFlex.id = 'envia_mensagemFlex'
   };
   
