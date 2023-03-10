@@ -109,11 +109,12 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-#envia_mensagemNone{
+.envia_mensagemNone{
     display: none;
 }
 
 .envia_mensagemFlex {
+    display: flex;
     margin-left: 10px;
     display: flex;
     align-items: center;
